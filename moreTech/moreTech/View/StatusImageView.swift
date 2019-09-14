@@ -17,8 +17,7 @@ class StatusImageView: UIImageView {
             self.image = #imageLiteral(resourceName: "statusFalse")
         }
     }
-
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }

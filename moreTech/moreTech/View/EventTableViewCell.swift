@@ -10,6 +10,8 @@ import UIKit
 
 class EventTableViewCell: UITableViewCell {
     
+    
+    
     private var nameTextFiled: UITextField?
     private var countMoneyTextField: UITextField?
     private var rubleLabel: UILabel?
@@ -38,14 +40,14 @@ class EventTableViewCell: UITableViewCell {
         circleLabel = UILabel()
         guard let circle = circleLabel else {return}
         contentView.addSubview(circle)
+        circle.layer.masksToBounds = true
+        circle.layer.cornerRadius = 5
         circle.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         circle.translatesAutoresizingMaskIntoConstraints = false
         circle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20.0).isActive = true
         circle.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-        circle.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
-        circle.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
-        circle.layer.cornerRadius = 15.0
-
+        circle.heightAnchor.constraint(equalToConstant: 10.0).isActive = true
+        circle.widthAnchor.constraint(equalToConstant: 10.0).isActive = true
         
         //name label
         nameTextFiled = UITextField()
@@ -66,7 +68,7 @@ class EventTableViewCell: UITableViewCell {
         guard let money = countMoneyTextField else {
             return
         }
-        money.placeholder = "Введите сумму:"
+        money.placeholder = "Ввведите ₽"
         money.font = textFontMedium
         contentView.addSubview(money)
         money.translatesAutoresizingMaskIntoConstraints = false
@@ -90,16 +92,6 @@ class EventTableViewCell: UITableViewCell {
         grayLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9).isActive = true
         grayLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 1.0).isActive = true
 
-        
-
-
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

@@ -9,12 +9,10 @@
 import UIKit
 
 
-class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     
-    
-    
-
+//    private var 
     
     private var plusButton: UIButton = {
         let bt = UIButton(type: .system)
@@ -61,6 +59,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     
     private var peopleCounter: Int = 1
+    private var allMoney: Double = 0.0
     
     @objc private func plusButtonTapped() {
         if (peopleCounter >= 1) {
@@ -136,6 +135,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         commonMoney.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 10.0).isActive = true
         
         view.addSubview(commonMoneyTextField)
+        commonMoneyTextField.delegate = self
         commonMoneyTextField.translatesAutoresizingMaskIntoConstraints = false
         commonMoneyTextField.textAlignment = .right
         commonMoneyTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0).isActive = true
@@ -147,6 +147,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         ownerMoney.topAnchor.constraint(equalTo: commonMoney.bottomAnchor, constant: 10.0).isActive = true
         
         view.addSubview(ownerMoneyField)
+        ownerMoneyField.delegate = self
         ownerMoneyField.translatesAutoresizingMaskIntoConstraints = false
         ownerMoneyField.textAlignment = .right
         ownerMoneyField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0).isActive = true
@@ -165,7 +166,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         view.addSubview(minusButton)
         minusButton.translatesAutoresizingMaskIntoConstraints = false
         minusButton.topAnchor.constraint(equalTo: ownerMoneyField.bottomAnchor, constant: topAnchorConstHeight).isActive = true
-        minusButton.rightAnchor.constraint(equalTo: amountLabel.rightAnchor, constant: -40).isActive = true
+        minusButton.rightAnchor.constraint(equalTo: amountLabel.rightAnchor, constant: -60).isActive = true
         let size:CGFloat = 40
         minusButton.widthAnchor.constraint(equalToConstant: size).isActive = true
         minusButton.heightAnchor.constraint(equalToConstant: size).isActive = true
@@ -173,7 +174,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         view.addSubview(plusButton)
         plusButton.translatesAutoresizingMaskIntoConstraints = false
         plusButton.topAnchor.constraint(equalTo: ownerMoneyField.bottomAnchor, constant: topAnchorConstHeight).isActive = true
-        plusButton.leftAnchor.constraint(equalTo: amountLabel.leftAnchor, constant: 40).isActive = true
+        plusButton.leftAnchor.constraint(equalTo: amountLabel.leftAnchor, constant: 60).isActive = true
         plusButton.widthAnchor.constraint(equalToConstant: size).isActive = true
         plusButton.heightAnchor.constraint(equalToConstant: size).isActive = true
         
@@ -221,4 +222,19 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    //MARK: - Text Field Delegate Methods
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == commonMoneyTextField {
+            if let text = commonMoneyTextField.text {
+                allMoney = (text as NSString).doubleValue
+            }
+        } else if textField == ownerMoneyField {
+            if let text = ownerMoneyField.text {
+                print(text)
+                allMoney -= (text as NSString).doubleValue
+            }
+        }
+        print(allMoney)
+    }
 }
