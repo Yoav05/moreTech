@@ -49,7 +49,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @objc private func someAction(){
-        
+        NetworkManager().registrate(id: "234123rfdwfwe3443r43r32r4322"){id, error in
+                print(id!)
+        }
     }
     
     //MARK: TableViewDataSource

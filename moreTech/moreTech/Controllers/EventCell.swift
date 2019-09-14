@@ -29,7 +29,7 @@ class EventCell: UITableViewCell{
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 //        let gradient = CAGradientLayer()
 //        gradient.frame = bounds
-//        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
+//        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
 //        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
 //        gradient.colors = [UIColor.white.cgColor, UIColor.red]
 //        layer.insertSublayer(gradient, at: 0)
