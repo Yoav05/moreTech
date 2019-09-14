@@ -8,7 +8,7 @@
 
 import UIKit
 
-class statusImageView: UIImageView {
+class StatusImageView: UIImageView {
     
     func addStatus(status: Bool) {
         if (status) {
@@ -17,6 +17,7 @@ class statusImageView: UIImageView {
             self.image = #imageLiteral(resourceName: "statusFalse")
         }
     }
+
 
     required init?(coder aDecoder: NSCoder) {
         fatalError()

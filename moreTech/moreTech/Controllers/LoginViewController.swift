@@ -85,7 +85,8 @@ class LoginViewController: UIViewController {
     @objc private func loginButtonTapped() {
         mainVC = ViewController()
         if let vc = mainVC {
-            navigationController?.pushViewController(vc, animated: true)
+            //navigationController?.pushViewController(EventViewController(), animated: true)
+            self.present(EventViewController(), animated: true, completion: nil)
         }
     }
     /*
