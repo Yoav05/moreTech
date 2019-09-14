@@ -7,29 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53AE41AB232CE7B000472E2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41AA232CE7B000472E2F /* AppDelegate.m */; };
-		53AE41AE232CE7B000472E2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41AD232CE7B000472E2F /* ViewController.m */; };
-		53AE41B1232CE7B000472E2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53AE41AF232CE7B000472E2F /* Main.storyboard */; };
-		53AE41B3232CE7B100472E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53AE41B2232CE7B100472E2F /* Assets.xcassets */; };
-		53AE41B6232CE7B100472E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53AE41B4232CE7B100472E2F /* LaunchScreen.storyboard */; };
-		53AE41B9232CE7B100472E2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41B8232CE7B100472E2F /* main.m */; };
+		53AE41CC232D20B700472E2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41CB232D20B700472E2F /* AppDelegate.swift */; };
+		53AE41CE232D20B700472E2F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41CD232D20B700472E2F /* MainViewController.swift */; };
+		53AE41D3232D20B900472E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53AE41D2232D20B900472E2F /* Assets.xcassets */; };
+		53AE41D6232D20B900472E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53AE41D4232D20B900472E2F /* LaunchScreen.storyboard */; };
+		53AE41DE232D26D800472E2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41DD232D26D800472E2F /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		53AE41A6232CE7B000472E2F /* moreTechApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moreTechApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		53AE41A9232CE7B000472E2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		53AE41AA232CE7B000472E2F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		53AE41AC232CE7B000472E2F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		53AE41AD232CE7B000472E2F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		53AE41B0232CE7B000472E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		53AE41B2232CE7B100472E2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		53AE41B5232CE7B100472E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		53AE41B7232CE7B100472E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53AE41B8232CE7B100472E2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		53AE41C8232D20B700472E2F /* moreTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moreTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53AE41CB232D20B700472E2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53AE41CD232D20B700472E2F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		53AE41D2232D20B900472E2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53AE41D5232D20B900472E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		53AE41D7232D20B900472E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53AE41DD232D26D800472E2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		53AE41A3232CE7B000472E2F /* Frameworks */ = {
+		53AE41C5232D20B700472E2F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,73 +35,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		53AE419D232CE7B000472E2F = {
+		53AE41BF232D20B700472E2F = {
 			isa = PBXGroup;
 			children = (
-				53AE41A8232CE7B000472E2F /* moreTechApp */,
-				53AE41A7232CE7B000472E2F /* Products */,
+				53AE41CA232D20B700472E2F /* moreTech */,
+				53AE41C9232D20B700472E2F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		53AE41A7232CE7B000472E2F /* Products */ = {
+		53AE41C9232D20B700472E2F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53AE41A6232CE7B000472E2F /* moreTechApp.app */,
+				53AE41C8232D20B700472E2F /* moreTech.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		53AE41A8232CE7B000472E2F /* moreTechApp */ = {
+		53AE41CA232D20B700472E2F /* moreTech */ = {
 			isa = PBXGroup;
 			children = (
-				53AE41A9232CE7B000472E2F /* AppDelegate.h */,
-				53AE41AA232CE7B000472E2F /* AppDelegate.m */,
-				53AE41AC232CE7B000472E2F /* ViewController.h */,
-				53AE41AD232CE7B000472E2F /* ViewController.m */,
-				53AE41AF232CE7B000472E2F /* Main.storyboard */,
-				53AE41B2232CE7B100472E2F /* Assets.xcassets */,
-				53AE41B4232CE7B100472E2F /* LaunchScreen.storyboard */,
-				53AE41B7232CE7B100472E2F /* Info.plist */,
-				53AE41B8232CE7B100472E2F /* main.m */,
+				53AE41CB232D20B700472E2F /* AppDelegate.swift */,
+				53AE41DD232D26D800472E2F /* LoginViewController.swift */,
+				53AE41CD232D20B700472E2F /* MainViewController.swift */,
+				53AE41D2232D20B900472E2F /* Assets.xcassets */,
+				53AE41D4232D20B900472E2F /* LaunchScreen.storyboard */,
+				53AE41D7232D20B900472E2F /* Info.plist */,
 			);
-			path = moreTechApp;
+			path = moreTech;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		53AE41A5232CE7B000472E2F /* moreTechApp */ = {
+		53AE41C7232D20B700472E2F /* moreTech */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53AE41BC232CE7B100472E2F /* Build configuration list for PBXNativeTarget "moreTechApp" */;
+			buildConfigurationList = 53AE41DA232D20B900472E2F /* Build configuration list for PBXNativeTarget "moreTech" */;
 			buildPhases = (
-				53AE41A2232CE7B000472E2F /* Sources */,
-				53AE41A3232CE7B000472E2F /* Frameworks */,
-				53AE41A4232CE7B000472E2F /* Resources */,
+				53AE41C4232D20B700472E2F /* Sources */,
+				53AE41C5232D20B700472E2F /* Frameworks */,
+				53AE41C6232D20B700472E2F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = moreTechApp;
-			productName = moreTechApp;
-			productReference = 53AE41A6232CE7B000472E2F /* moreTechApp.app */;
+			name = moreTech;
+			productName = moreTech;
+			productReference = 53AE41C8232D20B700472E2F /* moreTech.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		53AE419E232CE7B000472E2F /* Project object */ = {
+		53AE41C0232D20B700472E2F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = Yoav;
 				TargetAttributes = {
-					53AE41A5232CE7B000472E2F = {
+					53AE41C7232D20B700472E2F = {
 						CreatedOnToolsVersion = 10.3;
 					};
 				};
 			};
-			buildConfigurationList = 53AE41A1232CE7B000472E2F /* Build configuration list for PBXProject "moreTechApp" */;
+			buildConfigurationList = 53AE41C3232D20B700472E2F /* Build configuration list for PBXProject "moreTech" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,55 +107,46 @@
 				en,
 				Base,
 			);
-			mainGroup = 53AE419D232CE7B000472E2F;
-			productRefGroup = 53AE41A7232CE7B000472E2F /* Products */;
+			mainGroup = 53AE41BF232D20B700472E2F;
+			productRefGroup = 53AE41C9232D20B700472E2F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				53AE41A5232CE7B000472E2F /* moreTechApp */,
+				53AE41C7232D20B700472E2F /* moreTech */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		53AE41A4232CE7B000472E2F /* Resources */ = {
+		53AE41C6232D20B700472E2F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53AE41B6232CE7B100472E2F /* LaunchScreen.storyboard in Resources */,
-				53AE41B3232CE7B100472E2F /* Assets.xcassets in Resources */,
-				53AE41B1232CE7B000472E2F /* Main.storyboard in Resources */,
+				53AE41D6232D20B900472E2F /* LaunchScreen.storyboard in Resources */,
+				53AE41D3232D20B900472E2F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		53AE41A2232CE7B000472E2F /* Sources */ = {
+		53AE41C4232D20B700472E2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53AE41AE232CE7B000472E2F /* ViewController.m in Sources */,
-				53AE41B9232CE7B100472E2F /* main.m in Sources */,
-				53AE41AB232CE7B000472E2F /* AppDelegate.m in Sources */,
+				53AE41DE232D26D800472E2F /* LoginViewController.swift in Sources */,
+				53AE41CE232D20B700472E2F /* MainViewController.swift in Sources */,
+				53AE41CC232D20B700472E2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		53AE41AF232CE7B000472E2F /* Main.storyboard */ = {
+		53AE41D4232D20B900472E2F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				53AE41B0232CE7B000472E2F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		53AE41B4232CE7B100472E2F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				53AE41B5232CE7B100472E2F /* Base */,
+				53AE41D5232D20B900472E2F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -169,7 +154,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		53AE41BA232CE7B100472E2F /* Debug */ = {
+		53AE41D8232D20B900472E2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -225,10 +210,12 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		53AE41BB232CE7B100472E2F /* Release */ = {
+		53AE41D9232D20B900472E2F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -277,40 +264,44 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		53AE41BD232CE7B100472E2F /* Debug */ = {
+		53AE41DB232D20B900472E2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MPKAZZ2JW3;
-				INFOPLIST_FILE = moreTechApp/Info.plist;
+				INFOPLIST_FILE = moreTech/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = YoavNemirovskiy.moreTechApp;
+				PRODUCT_BUNDLE_IDENTIFIER = YoavNemirovskiy.moreTech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		53AE41BE232CE7B100472E2F /* Release */ = {
+		53AE41DC232D20B900472E2F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MPKAZZ2JW3;
-				INFOPLIST_FILE = moreTechApp/Info.plist;
+				INFOPLIST_FILE = moreTech/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = YoavNemirovskiy.moreTechApp;
+				PRODUCT_BUNDLE_IDENTIFIER = YoavNemirovskiy.moreTech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -318,25 +309,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53AE41A1232CE7B000472E2F /* Build configuration list for PBXProject "moreTechApp" */ = {
+		53AE41C3232D20B700472E2F /* Build configuration list for PBXProject "moreTech" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				53AE41BA232CE7B100472E2F /* Debug */,
-				53AE41BB232CE7B100472E2F /* Release */,
+				53AE41D8232D20B900472E2F /* Debug */,
+				53AE41D9232D20B900472E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53AE41BC232CE7B100472E2F /* Build configuration list for PBXNativeTarget "moreTechApp" */ = {
+		53AE41DA232D20B900472E2F /* Build configuration list for PBXNativeTarget "moreTech" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				53AE41BD232CE7B100472E2F /* Debug */,
-				53AE41BE232CE7B100472E2F /* Release */,
+				53AE41DB232D20B900472E2F /* Debug */,
+				53AE41DC232D20B900472E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 53AE419E232CE7B000472E2F /* Project object */;
+	rootObject = 53AE41C0232D20B700472E2F /* Project object */;
 }
