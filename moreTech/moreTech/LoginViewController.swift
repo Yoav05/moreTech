@@ -16,6 +16,10 @@ class LoginViewController: ViewController {
         // Do any additional setup after loading the view.
     }
     
+    private func setupUI() {
+        
+    }
+    
 
     /*
     // MARK: - Navigation

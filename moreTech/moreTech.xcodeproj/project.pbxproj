@@ -54,6 +54,9 @@
 		53AE41CA232D20B700472E2F /* moreTech */ = {
 			isa = PBXGroup;
 			children = (
+				53AE41E1232D278800472E2F /* Controllers */,
+				53AE41E0232D278200472E2F /* View */,
+				53AE41DF232D277900472E2F /* Model */,
 				53AE41CB232D20B700472E2F /* AppDelegate.swift */,
 				53AE41DD232D26D800472E2F /* LoginViewController.swift */,
 				53AE41CD232D20B700472E2F /* MainViewController.swift */,
@@ -62,6 +65,27 @@
 				53AE41D7232D20B900472E2F /* Info.plist */,
 			);
 			path = moreTech;
+			sourceTree = "<group>";
+		};
+		53AE41DF232D277900472E2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		53AE41E0232D278200472E2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		53AE41E1232D278800472E2F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
