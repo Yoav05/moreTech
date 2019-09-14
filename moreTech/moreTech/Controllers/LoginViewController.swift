@@ -8,11 +8,12 @@
 
 import UIKit
 
-class LoginViewController: ViewController {
+class LoginViewController: UIViewController {
     
     private var loginButton: UIButton?
     private var loginLabel: UILabel?
     private var loginTextField: UITextField?
+    private var mainVC: ViewController?
     
     
     override func viewDidLoad() {
@@ -28,7 +29,6 @@ class LoginViewController: ViewController {
         title = "Авторизация"
         guard let txtFontlarge = textFontLarge else { return }
         guard let txtFontMedium = textFontMedium else { return }
-        guard let txtFontSmall = textFontSmall else { return }
 
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: UIColor.red,
@@ -80,31 +80,14 @@ class LoginViewController: ViewController {
         button.heightAnchor.constraint(equalToConstant: 35).isActive = true
         button.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 20.0).isActive = true
         
-        
-        
-//        let postButton = UIButton(type: .system)
-//        postButton.setTitle("Post", for: .normal)
-//        postButton.addTarget(self, action: #selector(postButtonTapped(_:)), for: .touchUpInside)
-//        postButton.tintColor = UIColor.white
-//        postButton.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.04705882353, alpha: 1)
-//        postButton.titleLabel?.textAlignment = .center
-//        postButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 16)
-//        postButton.layer.cornerRadius = 2.0
-//        view.addSubview(postButton)
-//        postButton.translatesAutoresizingMaskIntoConstraints = false
-//        postButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//        postButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
-//        postButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
-//        postButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 10.0).isActive = true
-        
-        
     }
     
     @objc private func loginButtonTapped() {
-        
+        mainVC = ViewController()
+        if let vc = mainVC {
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
-    
-
     /*
     // MARK: - Navigation
 
