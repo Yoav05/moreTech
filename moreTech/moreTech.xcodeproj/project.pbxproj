@@ -13,6 +13,7 @@
 		53AE41D6232D20B900472E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53AE41D4232D20B900472E2F /* LaunchScreen.storyboard */; };
 		53AE41DE232D26D800472E2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41DD232D26D800472E2F /* LoginViewController.swift */; };
 		53AE41E3232D283D00472E2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41E2232D283D00472E2F /* Constants.swift */; };
+		D4C343BC232D3BBD00E1102D /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C343BB232D3BBC00E1102D /* EventCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		53AE41D7232D20B900472E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53AE41DD232D26D800472E2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		53AE41E2232D283D00472E2F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D4C343BB232D3BBC00E1102D /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				53AE41DD232D26D800472E2F /* LoginViewController.swift */,
 				53AE41CD232D20B700472E2F /* MainViewController.swift */,
+				D4C343BB232D3BBC00E1102D /* EventCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				53AE41DE232D26D800472E2F /* LoginViewController.swift in Sources */,
 				53AE41CE232D20B700472E2F /* MainViewController.swift in Sources */,
+				D4C343BC232D3BBD00E1102D /* EventCell.swift in Sources */,
 				53AE41CC232D20B700472E2F /* AppDelegate.swift in Sources */,
 				53AE41E3232D283D00472E2F /* Constants.swift in Sources */,
 			);
