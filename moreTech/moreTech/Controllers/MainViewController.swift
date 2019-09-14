@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     private let eventCellIdentifier = "eventCell"
     private let cellSpacingHeight: CGFloat = 15
+    private let cellHeight: CGFloat = 150
     
     private var eventsTable: UITableView = {
         return UITableView.init(frame: CGRect.zero, style: .plain)
@@ -62,13 +63,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: eventCellIdentifier, for: indexPath)
         return cell
     }
     
     //MARK: TableViewDelegate
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return cellSpacingHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

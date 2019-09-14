@@ -11,16 +11,19 @@ import UIKit
 
 class EventCell: UITableViewCell{
     
-    private var indicator: UIImageView{
-        return UIImageView()
-    }
+    private let rightOffset: CGFloat = 15
+    private let topOffset: CGFloat = 15
     
-    private var nameLabel: UILabel{
+    private var indicator: UIImageView = {
+        return UIImageView()
+    }()
+    
+    private var nameLabel: UILabel = {
         return UILabel()
-    }
-    private var timeLabel: UILabel{
+    }()
+    private var timeLabel: UILabel = {
         return UILabel()
-    }
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,8 +33,8 @@ class EventCell: UITableViewCell{
 //        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
 //        gradient.colors = [UIColor.white.cgColor, UIColor.red]
 //        layer.insertSublayer(gradient, at: 0)
-        self.backgroundColor = #colorLiteral(red: 0.9009569287, green: 0.9889369607, blue: 0.01758909412, alpha: 1)
-        self.layer.cornerRadius = 20
+        self.contentView.backgroundColor = #colorLiteral(red: 0.9009569287, green: 0.9889369607, blue: 0.01758909412, alpha: 1)
+        self.contentView.layer.cornerRadius = 20
         
         nameLabel.text = "Tusovka"
         self.addSubview(nameLabel)
@@ -45,11 +48,11 @@ class EventCell: UITableViewCell{
         let constraints: [NSLayoutConstraint] =
             [
                 nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-//                nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//                nameLabel.topAnchor.constraint(equalTo: view.topAnchor),
-//                nameLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ]
-        
+                nameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                timeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -rightOffset),
+                timeLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: topOffset)
+            ]
+
         self.addConstraints(constraints)
         
         
