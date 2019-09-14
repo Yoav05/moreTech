@@ -10,7 +10,7 @@ import Foundation
 
 public enum API {
     case registrate(id: String)
-    case createEvent(id: String)
+    case createEvent(id: String, amount: Float, name: String, date: String)
     case getEvents(id: String)
     case addParticipant(ownerId: String, meetingId: Int)
     case getParticipants(ownerId: String, meetingId: Int)
@@ -56,6 +56,13 @@ extension API: EndPointType {
             return .requestParameters(bodyParameters: ["id":id],
                                       bodyEncoding: .jsonEncoding,
                                       urlParameters: nil)
+        case .createEvent(_, let amount, let name, let date):
+            return .requestParameters(bodyParameters: ["amount": amount,
+                                                       "name": name,
+                                                       "date": date],
+                                      bodyEncoding: .jsonEncoding,
+                                      urlParameters: nil)
+        case .addParticipant(ownerId: <#T##String#>, meetingId: <#T##Int#>)
 //        case .newMovies(let page):
 //            return .requestParameters(bodyParameters: nil,
 //                                      bodyEncoding: .urlEncoding,

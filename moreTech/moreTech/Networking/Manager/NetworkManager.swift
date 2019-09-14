@@ -41,7 +41,27 @@ struct NetworkManager {
                         completion (nil, "Bad response")
                         return
                     }
-//                    let json = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                    let apiResponse = try JSONDecoder().decode(ApiResponse.self, from: responseData)
+                    completion(apiResponse.id, nil)
+                }catch{}
+            }
+        }
+    }
+    
+    func createEvent(id: String, completion: @escaping (_ id: String?,_ error: String?)->()){
+        router.request(.registrate(id: id)) { data, response, error in
+            if error != nil {
+                completion(nil, "Please check your network connection.")
+            }
+            if let response = response as? HTTPURLResponse{
+                if response.statusCode != 200 {
+                    completion (nil, "Bad request")
+                }
+                do{
+                    guard let responseData = data else {
+                        completion (nil, "Bad response")
+                        return
+                    }
                     let apiResponse = try JSONDecoder().decode(ApiResponse.self, from: responseData)
                     completion(apiResponse.id, nil)
                 }catch{}
