@@ -12,6 +12,7 @@
 		53AE41D3232D20B900472E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53AE41D2232D20B900472E2F /* Assets.xcassets */; };
 		53AE41D6232D20B900472E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53AE41D4232D20B900472E2F /* LaunchScreen.storyboard */; };
 		53AE41DE232D26D800472E2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41DD232D26D800472E2F /* LoginViewController.swift */; };
+		53AE41E3232D283D00472E2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41E2232D283D00472E2F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		53AE41D5232D20B900472E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53AE41D7232D20B900472E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53AE41DD232D26D800472E2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		53AE41E2232D283D00472E2F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,6 @@
 				53AE41E0232D278200472E2F /* View */,
 				53AE41DF232D277900472E2F /* Model */,
 				53AE41CB232D20B700472E2F /* AppDelegate.swift */,
-				53AE41DD232D26D800472E2F /* LoginViewController.swift */,
-				53AE41CD232D20B700472E2F /* MainViewController.swift */,
 				53AE41D2232D20B900472E2F /* Assets.xcassets */,
 				53AE41D4232D20B900472E2F /* LaunchScreen.storyboard */,
 				53AE41D7232D20B900472E2F /* Info.plist */,
@@ -77,6 +77,7 @@
 		53AE41E0232D278200472E2F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				53AE41E2232D283D00472E2F /* Constants.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -84,6 +85,8 @@
 		53AE41E1232D278800472E2F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				53AE41DD232D26D800472E2F /* LoginViewController.swift */,
+				53AE41CD232D20B700472E2F /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				53AE41DE232D26D800472E2F /* LoginViewController.swift in Sources */,
 				53AE41CE232D20B700472E2F /* MainViewController.swift in Sources */,
 				53AE41CC232D20B700472E2F /* AppDelegate.swift in Sources */,
+				53AE41E3232D283D00472E2F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
