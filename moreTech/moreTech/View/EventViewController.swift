@@ -8,35 +8,13 @@
 
 import UIKit
 
-typealias Animation = (UITableViewCell, IndexPath, UITableView) -> Void
 
 class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
     
     
-//    private var commonMoney: UILabel = {
-//        let lbl = UILabel()
-//        lbl.text = "Общая сумма ₽:"
-//        lbl.font = textFontLarge
-//        lbl.textColor = grayLabelColor
-//        return lbl
-//
-//
-//    }()
-//    private var commonMoneyTextField: UITextField = {
-//        let txtField = UITextField()
-//        txtField.placeholder = "Cумма"
-//        txtField.font = textFontLarge
-//        return txtField
-//
-//    }()
-//    private var ownerMoney: UILabel = {
-//        //
-//    }()
-//    private var ownerMoney: UITextField = {
-//
-//    }()
+
     
     private var plusButton: UIButton = {
         let bt = UIButton(type: .system)
@@ -119,23 +97,74 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
     }
     
+    private var commonMoney: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Общая сумма:"
+        lbl.font = textFontMedium
+        lbl.textColor = grayLabelColor
+        return lbl
+    }()
+    private var commonMoneyTextField: UITextField = {
+        let txtField = UITextField()
+        txtField.placeholder = "Ввведите ₽"
+        txtField.font = textFontMedium
+        return txtField
+        
+    }()
+    private var ownerMoney: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Я заплатил:"
+        lbl.font = textFontMedium
+        lbl.textColor = grayLabelColor
+        return lbl
+    }()
+    private var ownerMoneyField: UITextField = {
+        let txtField = UITextField()
+        txtField.placeholder = "Ввведите ₽"
+        txtField.font = textFontMedium
+        return txtField
+    }()
+    
     private func setupUI() {
         
         view.backgroundColor = UIColor.white
+        
+        //
+        view.addSubview(commonMoney)
+        commonMoney.translatesAutoresizingMaskIntoConstraints = false
+        commonMoney.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0).isActive = true
+        commonMoney.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 10.0).isActive = true
+        
+        view.addSubview(commonMoneyTextField)
+        commonMoneyTextField.translatesAutoresizingMaskIntoConstraints = false
+        commonMoneyTextField.textAlignment = .right
+        commonMoneyTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0).isActive = true
+        commonMoneyTextField.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 10.0).isActive = true
+        
+        view.addSubview(ownerMoney)
+        ownerMoney.translatesAutoresizingMaskIntoConstraints = false
+        ownerMoney.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20.0).isActive = true
+        ownerMoney.topAnchor.constraint(equalTo: commonMoney.bottomAnchor, constant: 10.0).isActive = true
+        
+        view.addSubview(ownerMoneyField)
+        ownerMoneyField.translatesAutoresizingMaskIntoConstraints = false
+        ownerMoneyField.textAlignment = .right
+        ownerMoneyField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0).isActive = true
+        ownerMoneyField.topAnchor.constraint(equalTo: commonMoney.bottomAnchor, constant: 10.0).isActive = true
     
         //AmountLabel
         view.addSubview(amountLabel)
         amountLabel.translatesAutoresizingMaskIntoConstraints = false
         amountLabel.font = textFontLarge
         amountLabel.textAlignment = .center
-        amountLabel.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        amountLabel.topAnchor.constraint(equalTo:ownerMoneyField.bottomAnchor, constant: 20).isActive = true
         amountLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         amountLabel.text = "1"
         
         //minusButton
         view.addSubview(minusButton)
         minusButton.translatesAutoresizingMaskIntoConstraints = false
-        minusButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: topAnchorConstHeight).isActive = true
+        minusButton.topAnchor.constraint(equalTo: ownerMoneyField.bottomAnchor, constant: topAnchorConstHeight).isActive = true
         minusButton.rightAnchor.constraint(equalTo: amountLabel.rightAnchor, constant: -40).isActive = true
         let size:CGFloat = 40
         minusButton.widthAnchor.constraint(equalToConstant: size).isActive = true
@@ -143,7 +172,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         view.addSubview(plusButton)
         plusButton.translatesAutoresizingMaskIntoConstraints = false
-        plusButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: topAnchorConstHeight).isActive = true
+        plusButton.topAnchor.constraint(equalTo: ownerMoneyField.bottomAnchor, constant: topAnchorConstHeight).isActive = true
         plusButton.leftAnchor.constraint(equalTo: amountLabel.leftAnchor, constant: 40).isActive = true
         plusButton.widthAnchor.constraint(equalToConstant: size).isActive = true
         plusButton.heightAnchor.constraint(equalToConstant: size).isActive = true
@@ -192,8 +221,4 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // Add animations here
-    }
-
 }
