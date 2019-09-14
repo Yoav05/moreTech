@@ -8,12 +8,12 @@
 
 import UIKit
 
-class EventTableViewCell: UITableViewCell {
+class EventTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     
     
-    private var nameTextFiled: UITextField?
-    private var countMoneyTextField: UITextField?
+    var nameTextFiled: UITextField?
+    var countMoneyTextField: UITextField?
     private var rubleLabel: UILabel?
     private var circleLabel: UILabel?
     private var grayLabel: UILabel = {
@@ -55,6 +55,7 @@ class EventTableViewCell: UITableViewCell {
             return
         }
         textField.placeholder = "Имя"
+        textField.delegate = self
         textField.font = textFontMedium
         contentView.addSubview(textField)
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +71,9 @@ class EventTableViewCell: UITableViewCell {
         }
         money.placeholder = "Ввведите ₽"
         money.font = textFontMedium
+        money.delegate = self
         contentView.addSubview(money)
+        money.keyboardType = UIKeyboardType.decimalPad
         money.translatesAutoresizingMaskIntoConstraints = false
         money.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 10.0).isActive = true
         money.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10.0).isActive = true
@@ -92,6 +95,11 @@ class EventTableViewCell: UITableViewCell {
         grayLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9).isActive = true
         grayLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 1.0).isActive = true
 
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
 }

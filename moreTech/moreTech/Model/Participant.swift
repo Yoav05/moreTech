@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Participants {
+class Participant {
     private(set) var idEvent: String!
     private(set) var amountMoney: Double!
     private(set) var numberKey: String!

@@ -12,7 +12,7 @@ import UIKit
 class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     
-//    private var 
+    private var participantsArray = [Participant]()
     
     private var plusButton: UIButton = {
         let bt = UIButton(type: .system)
@@ -136,6 +136,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         view.addSubview(commonMoneyTextField)
         commonMoneyTextField.delegate = self
+        commonMoneyTextField.keyboardType = UIKeyboardType.decimalPad
         commonMoneyTextField.translatesAutoresizingMaskIntoConstraints = false
         commonMoneyTextField.textAlignment = .right
         commonMoneyTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0).isActive = true
@@ -148,6 +149,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         view.addSubview(ownerMoneyField)
         ownerMoneyField.delegate = self
+        ownerMoneyField.keyboardType = UIKeyboardType.decimalPad
         ownerMoneyField.translatesAutoresizingMaskIntoConstraints = false
         ownerMoneyField.textAlignment = .right
         ownerMoneyField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0).isActive = true
@@ -205,24 +207,42 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = true
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.showsVerticalScrollIndicator = false
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: lineLabel.bottomAnchor, constant: 5.0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -5.0).isActive =  true
         tableView.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
+        tableView.allowsSelection = false
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return peopleCounter
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? EventTableViewCell {
+            if let nameText = cell.nameTextFiled?.text {
+                if let money = cell.countMoneyTextField?.text {
+                    let dmoney = (money as NSString).doubleValue
+                    let user = Participant(idEvent: "1", amountMoney: dmoney, numberKey: "150", name: nameText)
+                    participantsArray.append(user)
+                }
+            }
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
     
     //MARK: - Text Field Delegate Methods
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == commonMoneyTextField {
