@@ -27,7 +27,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private func setupUI() {
         title = "Авторизация"
-        guard let txtFontlarge = textFontLarge else { return }
         guard let txtFontMedium = textFontMedium else { return }
 
         self.navigationController?.navigationBar.titleTextAttributes =
@@ -40,13 +39,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         logLabel.text = "Введите свой ID"
         logLabel.textAlignment = .center
         logLabel.font = textFontBig
-        logLabel.backgroundColor = backgroundLabelColor
+        logLabel.backgroundColor = UIColor.white
         logLabel.layer.masksToBounds = true
-        logLabel.layer.cornerRadius = labelLayerCornerRadius
+        logLabel.layer.cornerRadius = 10.0
         logLabel.translatesAutoresizingMaskIntoConstraints = false
         logLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         logLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150.0).isActive = true
-        logLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.7).isActive = true
+        logLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.9).isActive = true
         //TextField
         
         loginTextField = UITextField()
@@ -57,7 +56,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         view.addSubview(textField)
         textField.layer.masksToBounds = true
-        textField.layer.cornerRadius = labelLayerCornerRadius
+        textField.layer.cornerRadius = 10.0
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.topAnchor.constraint(equalTo: logLabel.bottomAnchor, constant: 10).isActive = true
         textField.widthAnchor.constraint(equalTo: logLabel.widthAnchor, multiplier: 0.9).isActive = true

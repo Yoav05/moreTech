@@ -32,6 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             idValue = str
             NetworkManager().getEvents(id: idValue){ events, error in
                 DispatchQueue.main.sync {
+                    print(events, "ASDsA")
                     self.events = events!
                     self.eventsTable.reloadData()
                 }

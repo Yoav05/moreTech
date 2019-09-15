@@ -239,6 +239,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 return
             }
             if let str = UserDefaults.standard.object(forKey: userDefaultsID) as? String {
+                print(str)
                 NetworkManager().createEvent(ownerId: str, amount: mon, name: "Party Hard", date: "15.09.2019") { (id_event, nil) in
                     self.id_event = id_event
                     print(self.id_event, "IDDD")
