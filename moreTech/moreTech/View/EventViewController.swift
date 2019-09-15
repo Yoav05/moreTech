@@ -191,6 +191,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         view.addSubview(nextButton)
         nextButton.setTitle("Вперёд!", for: .normal)
+        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.heightAnchor.constraint(equalToConstant: 25.0).isActive = true
         nextButton.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor, constant: -10.0).isActive = true
@@ -215,6 +216,12 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
         tableView.allowsSelection = false
+    }
+    
+    @objc private func nextButtonTapped() {
+        let qrVC = QRViewController()
+        qrVC.participants = self.participantsArray
+        navigationController?.pushViewController(qrVC, animated: true)
     }
     
     
