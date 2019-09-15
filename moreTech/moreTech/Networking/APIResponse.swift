@@ -22,7 +22,8 @@ extension EventResponse: Decodable {
         case id = "Id"
         case amount = "Amount"
         case date = "Date"
-        case name = "Name"
+        case name = "UserName"
+        case invoice = "Invoice"
         case state = "State"
     }
     
