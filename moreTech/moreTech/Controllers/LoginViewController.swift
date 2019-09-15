@@ -39,7 +39,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(logLabel)
         logLabel.text = "Введите свой ID"
         logLabel.textAlignment = .center
-        logLabel.font = txtFontlarge
+        logLabel.font = textFontBig
         logLabel.backgroundColor = backgroundLabelColor
         logLabel.layer.masksToBounds = true
         logLabel.layer.cornerRadius = labelLayerCornerRadius
@@ -51,7 +51,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         loginTextField = UITextField()
         guard let textField = loginTextField else { return }
-        textField.font = textFontMedium
+        textField.font = textFontBig
         textField.placeholder = "ID"
         textField.backgroundColor = backgroundLabelColor
         
@@ -71,14 +71,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         button.backgroundColor = UIColor.black
         button.tintColor = backgroundLabelColor
         button.titleLabel?.textAlignment = .center
-        button.titleLabel?.font = txtFontMedium
+        button.titleLabel?.font = textFontBig
         button.layer.cornerRadius = labelLayerCornerRadius
         view.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        button.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 20.0).isActive = true
+        button.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
+        button.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor, constant: -20.0).isActive = true
         
     }
     
