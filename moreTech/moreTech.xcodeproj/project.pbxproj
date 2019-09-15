@@ -13,6 +13,12 @@
 		53AE41D6232D20B900472E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53AE41D4232D20B900472E2F /* LaunchScreen.storyboard */; };
 		53AE41DE232D26D800472E2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41DD232D26D800472E2F /* LoginViewController.swift */; };
 		53AE41E3232D283D00472E2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41E2232D283D00472E2F /* Constants.swift */; };
+		53AE41E5232D39EC00472E2F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41E4232D39EC00472E2F /* Event.swift */; };
+		53AE41E7232D3AAC00472E2F /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41E6232D3AAC00472E2F /* Participant.swift */; };
+		53AE41EB232D44BB00472E2F /* StatusImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41EA232D44BB00472E2F /* StatusImageView.swift */; };
+		53AE41EF232D4F2400472E2F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41EE232D4F2400472E2F /* EventViewController.swift */; };
+		53B48199232D7822006B6B74 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B48198232D7822006B6B74 /* EventTableViewCell.swift */; };
+		53B4819D232DB2AD006B6B74 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4819C232DB2AD006B6B74 /* QRViewController.swift */; };
 		D4C343BC232D3BBD00E1102D /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C343BB232D3BBC00E1102D /* EventCell.swift */; };
 		D4C343C0232D5B7D00E1102D /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C343BF232D5B7D00E1102D /* EndPointType.swift */; };
 		D4C343C2232D5BA000E1102D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C343C1232D5BA000E1102D /* HTTPMethod.swift */; };
@@ -24,13 +30,6 @@
 		D4C343D3232D5FEC00E1102D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C343D2232D5FEC00E1102D /* NetworkManager.swift */; };
 		D4C343D5232D60CB00E1102D /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C343D4232D60CB00E1102D /* APIEndPoints.swift */; };
 		D4C343D7232D77F400E1102D /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C343D6232D77F400E1102D /* APIResponse.swift */; };
-		53AE41E5232D39EC00472E2F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41E4232D39EC00472E2F /* Event.swift */; };
-		53AE41E7232D3AAC00472E2F /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41E6232D3AAC00472E2F /* Participant.swift */; };
-		53AE41EB232D44BB00472E2F /* StatusImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41EA232D44BB00472E2F /* StatusImageView.swift */; };
-		53AE41EF232D4F2400472E2F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE41EE232D4F2400472E2F /* EventViewController.swift */; };
-		53B48199232D7822006B6B74 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B48198232D7822006B6B74 /* EventTableViewCell.swift */; };
-		53B4819B232D911A006B6B74 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4819A232D911A006B6B74 /* Animator.swift */; };
-		53B4819D232DB2AD006B6B74 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4819C232DB2AD006B6B74 /* QRViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +41,12 @@
 		53AE41D7232D20B900472E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53AE41DD232D26D800472E2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		53AE41E2232D283D00472E2F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		53AE41E4232D39EC00472E2F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		53AE41E6232D3AAC00472E2F /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		53AE41EA232D44BB00472E2F /* StatusImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusImageView.swift; sourceTree = "<group>"; };
+		53AE41EE232D4F2400472E2F /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ../View/EventViewController.swift; sourceTree = "<group>"; };
+		53B48198232D7822006B6B74 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		53B4819C232DB2AD006B6B74 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QRViewController.swift; path = moreTech/Controllers/QRViewController.swift; sourceTree = SOURCE_ROOT; };
 		D4C343BB232D3BBC00E1102D /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		D4C343BF232D5B7D00E1102D /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		D4C343C1232D5BA000E1102D /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -53,13 +58,6 @@
 		D4C343D2232D5FEC00E1102D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D4C343D4232D60CB00E1102D /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
 		D4C343D6232D77F400E1102D /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
-		53AE41E4232D39EC00472E2F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		53AE41E6232D3AAC00472E2F /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
-		53AE41EA232D44BB00472E2F /* StatusImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusImageView.swift; sourceTree = "<group>"; };
-		53AE41EE232D4F2400472E2F /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ../View/EventViewController.swift; sourceTree = "<group>"; };
-		53B48198232D7822006B6B74 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		53B4819A232D911A006B6B74 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		53B4819C232DB2AD006B6B74 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QRViewController.swift; path = moreTech/Controllers/QRViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				53AE41EA232D44BB00472E2F /* StatusImageView.swift */,
-				53B4819A232D911A006B6B74 /* Animator.swift */,
 				53B48198232D7822006B6B74 /* EventTableViewCell.swift */,
 			);
 			path = View;
@@ -247,7 +244,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53B4819B232D911A006B6B74 /* Animator.swift in Sources */,
 				53B48199232D7822006B6B74 /* EventTableViewCell.swift in Sources */,
 				53AE41E5232D39EC00472E2F /* Event.swift in Sources */,
 				53AE41EB232D44BB00472E2F /* StatusImageView.swift in Sources */,

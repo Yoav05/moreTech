@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navController = UINavigationController()
         let titleTextColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.04705882353, alpha: 1);
         UINavigationBar.appearance().tintColor = titleTextColor
-        let mainView = LoginViewController(nibName: nil, bundle: nil)
+        let mainView = ViewController(nibName: nil, bundle: nil)
         mainView.view.backgroundColor = UIColor.white
         navController.viewControllers = [mainView]
         self.window?.rootViewController = navController
