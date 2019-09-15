@@ -13,6 +13,8 @@ class QRViewController: UIViewController, UITextFieldDelegate {
     var participants = [Participant]()
     
     private var arrIndex: Int = 0
+    var allSum: Double!
+    var ownnerSum: Double!
     var qrImageView: UIImageView?
     var nameLabel: UILabel?
     var sumLabel: UILabel?
@@ -51,7 +53,7 @@ class QRViewController: UIViewController, UITextFieldDelegate {
 //        userLabel.textColor = UIColor.white
         userLabel.layer.masksToBounds = true
         userLabel.layer.cornerRadius = 10.0
-        userLabel.text = "Вася Пупкин" //  participants = [Participant]()
+        userLabel.text = participants[arrIndex].pName//  participants = [Participant]()
         userLabel.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 20.0).isActive = true
         userLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         userLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
@@ -61,7 +63,15 @@ class QRViewController: UIViewController, UITextFieldDelegate {
         qrImageView = UIImageView()
         guard let imageView = qrImageView else { return }
         view.addSubview(imageView)
-        imageView.image = generateQRCode(from: "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS")// participants = [Participant]()
+        guard  let amount = participants[arrIndex].amountMoney else {
+            return
+        }
+        let address = "753ddac6474cfeea4c05ac7924c4761206c0886f"
+//        {"address":"753ddac6474cfeea4c05ac7924c4761206c0886f"}
+        imageView.image = generateQRCode(from: generateStringJson(invoiceID: "213okkj231nfdjsailfndsanfdsafdsiafbejfdsakn", amount: amount, address: address))// participants = [Participant]()
+            //Йоав :
+            
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         imageView.topAnchor.constraint(equalTo: userLabel.bottomAnchor, constant: 20.0).isActive = true
@@ -79,7 +89,8 @@ class QRViewController: UIViewController, UITextFieldDelegate {
         money.textColor = UIColor.white
         money.layer.masksToBounds = true
         money.layer.cornerRadius = 10.0
-        money.text = "1500" + " ₽"
+        guard let lll = participants[arrIndex].amountMoney else { return }
+        money.text = "\(String(describing: lll))" + " ₽"
         money.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20.0).isActive = true
         upConstraint = money.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20.0)
         downConstraint = money.topAnchor.constraint(equalTo: userLabel.bottomAnchor, constant: 20.0)
@@ -158,6 +169,27 @@ class QRViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func nextButtonTapped() {
+        //{"invoiceId":"42615e75-6cde-41dc-a2fe-24e99d92c1c3","amount":58,"address":"537c8cf34d8c59d2c1341c1dd90f3a991c69c5fb","currencyCode":810}
+        //"invoiceID":"42615e75-6cde-41dc-a2fe-24e99d92c1c3","amount":58.0,"address":"537c8cf34d8c59d2c1341c1dd90f3a991c69c5fb","currencyCode":810
+
+        arrIndex += 1
+        //qr
+        if (arrIndex < participants.count ) {
+            nameLabel?.text = participants[arrIndex].pName
+            guard let lll = participants[arrIndex].amountMoney else {
+                return
+            }
+            guard  let amount = participants[arrIndex].amountMoney else {
+                return
+            }
+            let address = "764185f272c0b6b4a14a07b2732d5572e0347991"
+            qrImageView?.image = generateQRCode(from: generateStringJson(invoiceID: "2131232132131231nfdjsailfndsanfdsiafbej", amount: amount, address: address))
+            sumLabel?.text = "\(String(describing: lll))" + " ₽"
+        } else {
+            nextButton?.isEnabled = false
+            nextButton?.setTitle("Закончено", for: .normal)
+        }
+        
     }
     
     @objc private func switchButtonTapped() {
@@ -194,6 +226,14 @@ class QRViewController: UIViewController, UITextFieldDelegate {
         }
         
         return nil
+    }
+    
+    func generateStringJson(invoiceID: String, amount: Double, address: String) -> String {
+        let currencyCode = 810
+        let str = "{\"invoiceId\":\"\(invoiceID)\",\"amount\":\(amount),\"address\":\"\(address)\",\"currencyCode\":\(currencyCode)}"
+        return str
+        
+        //{"invoiceId":"42615e75-6cde-41dc-a2fe-24e99d92c1c3","amount":58,"address":"537c8cf34d8c59d2c1341c1dd90f3a991c69c5fb","currencyCode":810}
     }
     
 

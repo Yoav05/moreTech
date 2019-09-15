@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "moreTech/View/EventViewController.swift"
-            timestampString = "590209659.315403"
+            filePath = "moreTech/Controllers/QRViewController.swift"
+            timestampString = "590218261.139438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "nextButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

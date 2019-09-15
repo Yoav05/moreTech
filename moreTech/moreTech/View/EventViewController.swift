@@ -219,9 +219,18 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @objc private func nextButtonTapped() {
-        let qrVC = QRViewController()
-        qrVC.participants = self.participantsArray
-        navigationController?.pushViewController(qrVC, animated: true)
+
+        loopThroughElements()
+        if participantsArray.count < 1 {
+            let alert = UIAlertController(title: "Добавьте участников", message: "Введите все поля", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let qrVC = QRViewController()
+            qrVC.participants = self.participantsArray
+            navigationController?.pushViewController(qrVC, animated: true)
+        }
+
     }
     
     
@@ -231,16 +240,32 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? EventTableViewCell {
-            if let nameText = cell.nameTextFiled?.text {
-                if let money = cell.countMoneyTextField?.text {
-                    let dmoney = (money as NSString).doubleValue
-                    let user = Participant(idEvent: "1", amountMoney: dmoney, numberKey: "150", name: nameText)
-                    participantsArray.append(user)
-                }
-            }
             return cell
         } else {
             return UITableViewCell()
+        }
+    }
+    
+    private func loopThroughElements() {
+        if let cells = self.eventTableView?.visibleCells as? Array<EventTableViewCell> {
+            for cell in cells {
+                // look at data
+                if let nameText = cell.nameTextFiled?.text {
+                    if (nameText == "") {
+                        participantsArray.removeAll()
+                        break
+                    }
+                    if let money = cell.countMoneyTextField?.text {
+                        if (money == "" ) {
+                            participantsArray.removeAll()
+                            break
+                        }
+                        let dmoney = (money as NSString).doubleValue
+                        let user = Participant(idEvent: "1", amountMoney: dmoney, numberKey: "150", name: nameText)
+                        participantsArray.append(user)
+                    }
+                }
+            }
         }
     }
     
