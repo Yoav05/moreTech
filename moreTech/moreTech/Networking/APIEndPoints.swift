@@ -62,7 +62,7 @@ extension API: EndPointType {
                                                        "date": date],
                                       bodyEncoding: .jsonEncoding,
                                       urlParameters: nil)
-        case .addParticipant(ownerId: <#T##String#>, meetingId: <#T##Int#>)
+//        case .addParticipant(ownerId: <#T##String#>, meetingId: <#T##Int#>)
 //        case .newMovies(let page):
 //            return .requestParameters(bodyParameters: nil,
 //                                      bodyEncoding: .urlEncoding,

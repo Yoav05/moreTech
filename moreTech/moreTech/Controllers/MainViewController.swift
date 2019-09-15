@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     private let eventCellIdentifier = "eventCell"
     private let cellSpacingHeight: CGFloat = 15
     private let cellHeight: CGFloat = 150
+    private var idValue: String!
     
     private var eventsTable: UITableView = {
         return UITableView.init(frame: CGRect.zero, style: .plain)
@@ -20,9 +21,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor.red
         
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let str = UserDefaults.standard.object(forKey: userDefaultsID) as? String {
+            idValue = str
+        } else {
+            self.present(LoginViewController(), animated: true, completion: nil)
+        }
     }
 
     
@@ -48,10 +58,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.addConstraints(constraints)
     }
     
-    @objc private func someAction(){
-        NetworkManager().registrate(id: "234123rfdwfwe3443r43r32r4322"){id, error in
-                print(id!)
-        }
+    @objc private func someAction() {
+        navigationController?.pushViewController(EventViewController(), animated: true)
+
     }
     
     //MARK: TableViewDataSource

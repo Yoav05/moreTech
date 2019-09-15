@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private var loginButton: UIButton?
     private var loginLabel: UILabel?
@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor.white
         setupUI()
 
         // Do any additional setup after loading the view.
@@ -82,13 +82,20 @@ class LoginViewController: UIViewController {
         
     }
     
-    @objc private func loginButtonTapped() {
-        mainVC = ViewController()
-        if let vc = mainVC {
-            //navigationController?.pushViewController(EventViewController(), animated: true)
-            self.present(EventViewController(), animated: true, completion: nil)
-        }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
+    
+    @objc private func loginButtonTapped() {
+        let defaults = UserDefaults.standard
+        if let idText = loginTextField?.text {
+            defaults.set(idText, forKey: userDefaultsID)
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
