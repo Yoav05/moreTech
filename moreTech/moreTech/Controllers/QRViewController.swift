@@ -188,6 +188,9 @@ class QRViewController: UIViewController, UITextFieldDelegate {
         } else {
             nextButton?.isEnabled = false
             nextButton?.setTitle("Закончено", for: .normal)
+            UIView.animate(withDuration: 0.5) {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
         
     }
