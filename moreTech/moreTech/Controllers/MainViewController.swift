@@ -11,9 +11,11 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     private let eventCellIdentifier = "eventCell"
-    private let cellSpacingHeight: CGFloat = 15
-    private let cellHeight: CGFloat = 150
+    private let cellSpacingHeight: CGFloat = 30
+    private let cellHeight: CGFloat = 100
     private var idValue: String!
+    
+    private var events: [EventResponse] = []
     
     private var eventsTable: UITableView = {
         return UITableView.init(frame: CGRect.zero, style: .plain)
@@ -21,15 +23,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.red
-        
+
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let str = UserDefaults.standard.object(forKey: userDefaultsID) as? String {
             idValue = str
+            NetworkManager().getEvents(id: idValue){ events, error in
+                DispatchQueue.main.sync {
+                    self.events = events!
+                    self.eventsTable.reloadData()
+                }
+            }
         } else {
             self.present(LoginViewController(), animated: true, completion: nil)
         }
@@ -43,6 +49,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         eventsTable.register(EventCell.self, forCellReuseIdentifier: eventCellIdentifier)
         eventsTable.dataSource = self
         eventsTable.delegate = self
+        eventsTable.allowsSelection = false
         eventsTable.separatorStyle = .none
         view.addSubview(eventsTable)
         
@@ -60,13 +67,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @objc private func someAction() {
         navigationController?.pushViewController(EventViewController(), animated: true)
-
     }
     
     //MARK: TableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return events.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,8 +80,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: eventCellIdentifier, for: indexPath)
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: eventCellIdentifier, for: indexPath) as? EventCell
+        cell?.setEvent(event: events[indexPath.section])
+        return cell!
     }
     
     //MARK: TableViewDelegate

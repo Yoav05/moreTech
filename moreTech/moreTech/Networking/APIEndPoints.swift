@@ -10,10 +10,12 @@ import Foundation
 
 public enum API {
     case registrate(id: String)
-    case createEvent(id: String, amount: Float, name: String, date: String)
+    case createEvent(id: String, amount: String, name: String, date: String)
     case getEvents(id: String)
-    case addParticipant(ownerId: String, meetingId: Int)
+    case addParticipant(ownerId: String, meetingId: Int, amount: String, invoice: String)
     case getParticipants(ownerId: String, meetingId: Int)
+    case createInvoice
+//    case addParticipant
 }
 
 extension API: EndPointType {
@@ -27,13 +29,15 @@ extension API: EndPointType {
         case .registrate:
             return "participants"
         case .createEvent(let id):
-            return "participants\(id)/meetings"
+            return "participants/\(id)/meetings"
         case .getEvents(let id):
-            return "participants\(id)/meetings"
-        case .addParticipant(let ownerId, let meetingId):
-            return "participants\(ownerId)/meetings/\(meetingId)"
+            return "participants/\(id)/meetings"
+        case .addParticipant(let ownerId, let meetingId, _, _):
+            return "participants/\(ownerId)/meetings/\(meetingId)"
         case .getParticipants(let ownerId, let meetingId):
-            return "participants\(ownerId)/meetings/\(meetingId)"
+            return "participants/\(ownerId)/meetings/\(meetingId)"
+        case .createInvoice:
+            return "api/invoice"
         }
     }
     
@@ -62,12 +66,11 @@ extension API: EndPointType {
                                                        "date": date],
                                       bodyEncoding: .jsonEncoding,
                                       urlParameters: nil)
-//        case .addParticipant(ownerId: <#T##String#>, meetingId: <#T##Int#>)
-//        case .newMovies(let page):
-//            return .requestParameters(bodyParameters: nil,
-//                                      bodyEncoding: .urlEncoding,
-//                                      urlParameters: ["page":page,
-//                                                      "api_key":NetworkManager.MovieAPIKey])
+        case .addParticipant(_, _, let amount, let invoice):
+            return .requestParameters(bodyParameters: ["amount": amount,
+                                                       "invoice": invoice],
+                                      bodyEncoding: .jsonEncoding,
+                                      urlParameters: nil)
         default:
             return .request
         }
