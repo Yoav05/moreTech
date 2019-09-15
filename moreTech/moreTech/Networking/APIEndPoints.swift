@@ -37,7 +37,7 @@ extension API: EndPointType {
         case .getParticipants(let ownerId, let meetingId):
             return "participants/\(ownerId)/meetings/\(meetingId)"
         case .createInvoice:
-            return "api/invoice"
+            return "invoice"
         }
     }
     

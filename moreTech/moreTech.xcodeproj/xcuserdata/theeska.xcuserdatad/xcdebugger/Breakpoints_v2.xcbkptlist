@@ -9,14 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "moreTech/Networking/APIEndPoints.swift"
-            timestampString = "590220957.5498689"
+            filePath = "moreTech/Networking/Manager/NetworkManager.swift"
+            timestampString = "590228277.673677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "path"
-            landmarkType = "24">
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "registrate(id:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "moreTech/Networking/Manager/NetworkManager.swift"
-            timestampString = "590220957.54994"
+            timestampString = "590228277.673869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "registrate(id:completion:)"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "getEvents(id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

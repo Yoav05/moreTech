@@ -22,8 +22,7 @@ extension EventResponse: Decodable {
         case id = "Id"
         case amount = "Amount"
         case date = "Date"
-        case name = "UserName"
-        case invoice = "Invoice"
+        case name = "Name"
         case state = "State"
     }
     
@@ -42,8 +41,8 @@ extension EventResponse: Decodable {
 
 struct ParticipantResponse {
     let id: String
-    let amount: Float
-    let invoice: Int
+    let amount: String
+    let invoice: String
     let state: String
 }
 
@@ -60,8 +59,8 @@ extension ParticipantResponse: Decodable {
         let container = try decoder.container(keyedBy: ApiResponseCodingKeys.self)
         
         id = try container.decode(String.self, forKey: .id)
-        amount = try container.decode(Float.self, forKey: .amount)
-        invoice = try container.decode(Int.self, forKey: .invoice)
+        amount = try container.decode(String.self, forKey: .amount)
+        invoice = try container.decode(String.self, forKey: .invoice)
         state = try container.decode(String.self, forKey: .state)
         
     }
