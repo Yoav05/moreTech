@@ -48,8 +48,8 @@ struct NetworkManager {
         }
     }
     
-    func createEvent(event: EventResponse, completion: @escaping (_ id: String?,_ error: String?)->()){
-        router.request(.createEvent(id: event.id, amount: event.amount, name: event.name, date: event.date)) { data, response, error in
+    func createEvent(ownerId: String, amount: String, name: String, date: String, completion: @escaping (_ id: String?,_ error: String?)->()){
+        router.request(.createEvent(id: ownerId, amount: amount, name: name, date: date)) { data, response, error in
             if error != nil {
                 completion(nil, "Please check your network connection.")
             }
@@ -102,11 +102,36 @@ struct NetworkManager {
                         completion ("Bad response")
                         return
                     }
-                    let apiResponse = try JSONDecoder().decode(EventResponse.self, from: responseData)
+                    _ = try JSONDecoder().decode(EventResponse.self, from: responseData)
                     completion(nil)
                 } catch{}
             }
         }
     }
+    
+    
+    func getParticipants(ownerId: String, meetingId: Int, completion: @escaping (_ participants: [ParticipantResponse]?,_ error: String?)->()){
+        router.request(.getParticipants(ownerId: ownerId, meetingId: meetingId)) { data, response, error in
+            if error != nil {
+                completion(nil, "Please check your network connection.")
+            }
+            if let response = response as? HTTPURLResponse{
+                if response.statusCode != 200 {
+                    completion (nil, "Bad request")
+                }
+                do{
+                    guard let responseData = data else {
+                        completion (nil, "Bad response")
+                        return
+                    }
+                    let apiResponse = try JSONDecoder().decode([ParticipantResponse].self, from: responseData)
+                    completion(apiResponse, nil)
+                }catch{}
+            }
+        }
+    }
+    
+    
+    
     
 }
