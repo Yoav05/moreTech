@@ -124,6 +124,8 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return txtField
     }()
     
+    private let refreshControl = UIRefreshControl()
+    
     private func setupUI() {
         
         view.backgroundColor = UIColor.white
@@ -193,7 +195,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         nextButton.setTitle("Вперёд!", for: .normal)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.heightAnchor.constraint(equalToConstant: 25.0).isActive = true
+        nextButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         nextButton.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor, constant: -10.0).isActive = true
         nextButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
         nextButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
@@ -216,8 +218,15 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor).isActive = true
         tableView.allowsSelection = false
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
     
+    private var id_event: String!
+    
+    @objc private func refreshData() {
+        //upd
+    }
     @objc private func nextButtonTapped() {
 
         loopThroughElements()
@@ -226,6 +235,16 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
+            guard let mon = ownerMoneyField.text else {
+                return
+            }
+//            let event = EventResponse.init(id: "", amount: mon, date: "15.09.2019", name: "Test", state: "1")
+//            NetworkManager().createEvent(event: event) { (id_event, nil) in
+//                self.id_event = id_event
+//                DispatchQueue.main.sync {
+//                    print(self.id_event, "IDDD")
+//                }
+            }
             let qrVC = QRViewController()
             qrVC.participants = self.participantsArray
             navigationController?.pushViewController(qrVC, animated: true)

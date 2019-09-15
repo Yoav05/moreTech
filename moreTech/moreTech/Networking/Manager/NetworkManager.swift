@@ -104,7 +104,7 @@ struct NetworkManager {
                     }
                     _ = try JSONDecoder().decode(EventResponse.self, from: responseData)
                     completion(nil)
-                }catch{}
+                } catch{}
             }
         }
     }
