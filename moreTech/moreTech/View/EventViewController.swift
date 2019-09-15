@@ -222,6 +222,8 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
     
+    private var id_event: String!
+    
     @objc private func refreshData() {
         //upd
     }
@@ -233,6 +235,16 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
+            guard let mon = ownerMoneyField.text else {
+                return
+            }
+//            let event = EventResponse.init(id: "", amount: mon, date: "15.09.2019", name: "Test", state: "1")
+//            NetworkManager().createEvent(event: event) { (id_event, nil) in
+//                self.id_event = id_event
+//                DispatchQueue.main.sync {
+//                    print(self.id_event, "IDDD")
+//                }
+            }
             let qrVC = QRViewController()
             qrVC.participants = self.participantsArray
             navigationController?.pushViewController(qrVC, animated: true)
