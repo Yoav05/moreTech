@@ -191,6 +191,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         view.addSubview(nextButton)
         nextButton.setTitle("Вперёд!", for: .normal)
+        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.heightAnchor.constraint(equalToConstant: 25.0).isActive = true
         nextButton.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor, constant: -10.0).isActive = true
@@ -217,6 +218,21 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.allowsSelection = false
     }
     
+    @objc private func nextButtonTapped() {
+
+        loopThroughElements()
+        if participantsArray.count < 1 {
+            let alert = UIAlertController(title: "Добавьте участников", message: "Введите все поля", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let qrVC = QRViewController()
+            qrVC.participants = self.participantsArray
+            navigationController?.pushViewController(qrVC, animated: true)
+        }
+
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return peopleCounter
@@ -224,16 +240,32 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? EventTableViewCell {
-            if let nameText = cell.nameTextFiled?.text {
-                if let money = cell.countMoneyTextField?.text {
-                    let dmoney = (money as NSString).doubleValue
-                    let user = Participant(idEvent: "1", amountMoney: dmoney, numberKey: "150", name: nameText)
-                    participantsArray.append(user)
-                }
-            }
             return cell
         } else {
             return UITableViewCell()
+        }
+    }
+    
+    private func loopThroughElements() {
+        if let cells = self.eventTableView?.visibleCells as? Array<EventTableViewCell> {
+            for cell in cells {
+                // look at data
+                if let nameText = cell.nameTextFiled?.text {
+                    if (nameText == "") {
+                        participantsArray.removeAll()
+                        break
+                    }
+                    if let money = cell.countMoneyTextField?.text {
+                        if (money == "" ) {
+                            participantsArray.removeAll()
+                            break
+                        }
+                        let dmoney = (money as NSString).doubleValue
+                        let user = Participant(idEvent: "1", amountMoney: dmoney, numberKey: "150", name: nameText)
+                        participantsArray.append(user)
+                    }
+                }
+            }
         }
     }
     
