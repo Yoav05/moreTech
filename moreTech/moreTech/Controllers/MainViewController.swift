@@ -23,19 +23,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "More/Tech"
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let str = UserDefaults.standard.object(forKey: userDefaultsID) as? String {
             idValue = str
-            NetworkManager().getEvents(id: idValue){ events, error in
-                DispatchQueue.main.sync {
-                    self.events = events!
-                    self.eventsTable.reloadData()
-                }
-            }
+//            NetworkManager().getEvents(id: idValue){ events, error in
+//                DispatchQueue.main.sync {
+//                    print(events, "ASDsA")
+//                    self.events = events!
+//                    self.eventsTable.reloadData()
+//                }
+//            }
         } else {
             self.present(LoginViewController(), animated: true, completion: nil)
         }
